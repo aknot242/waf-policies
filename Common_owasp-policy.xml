@@ -1,18 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<policy integrity_check="0d9df758c3ce59e28db666f221f6fb4d" bigip_version="14.1.0" name="/Common/owasp-policy.app/owasp-policy">
+<policy integrity_check="fd401762c71fae676b9951b366e14356" bigip_version="14.1.0" name="/Common/owasp-policy.app/owasp-policy">
   <type>Security</type>
   <policy_version>
-    <timestamp>2019-05-01T05:59:18Z</timestamp>
+    <timestamp>2019-05-01T17:10:09Z</timestamp>
     <device_name>f5vm010.westus2.cloudapp.azure.com</device_name>
     <policy_name>/Common/owasp-policy.app/owasp-policy</policy_name>
-    <last_change> Security Policy /Common/owasp-policy.app/owasp-policy [add]: Type was set to Security.
-Encoding Selected was set to true.
-Application Language was set to utf-8.
-Template was set to POLICY_TEMPLATE_RAPID_DEPLOYMENT.
-Active was set to false.
-Policy Name was set to /Common/owasp-policy.app/owasp-policy.
-Enforcement Mode was set to Blocking.
-Trust XFF was set to Trust XFF. { audit: policy = /Common/owasp-policy.app/owasp-policy, username = admin, client IP = restnoded }</last_change>
+    <last_change>HTTP Check Bad HTTP version [update]: Disable HTTP Check { audit: policy = /Common/owasp-policy.app/owasp-policy, username = azureuser, client IP = 50.53.138.94 }</last_change>
   </policy_version>
   <encoding>utf-8</encoding>
   <description>Rapid Deployment Policy</description>
@@ -539,7 +532,7 @@ Trust XFF was set to Trust XFF. { audit: policy = /Common/owasp-policy.app/owasp
     <http_protocol_compliance_setting policy_builder_tracking="enabled" name="CRLF characters before request start">disabled</http_protocol_compliance_setting>
     <http_protocol_compliance_setting policy_builder_tracking="disabled" name="Host header contains IP address">disabled</http_protocol_compliance_setting>
     <http_protocol_compliance_setting policy_builder_tracking="enabled" name="Content length should be a positive number">disabled</http_protocol_compliance_setting>
-    <http_protocol_compliance_setting policy_builder_tracking="disabled" name="Bad HTTP version">enabled</http_protocol_compliance_setting>
+    <http_protocol_compliance_setting policy_builder_tracking="disabled" name="Bad HTTP version">disabled</http_protocol_compliance_setting>
     <http_protocol_compliance_setting policy_builder_tracking="disabled" name="Null in request">enabled</http_protocol_compliance_setting>
     <http_protocol_compliance_setting policy_builder_tracking="disabled" name="High ASCII characters in headers">disabled</http_protocol_compliance_setting>
     <http_protocol_compliance_setting policy_builder_tracking="enabled" name="Unparsable request content">enabled</http_protocol_compliance_setting>
