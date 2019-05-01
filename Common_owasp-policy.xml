@@ -1,19 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<policy integrity_check="b6c94d2645dbc24393a60005126fdce8" bigip_version="14.1.0" name="/Common/owasp-policy.app/owasp-policy">
+<policy integrity_check="035e8d8b31251e24e6ce72fd14185282" bigip_version="14.1.0" name="/Common/owasp-policy.app/owasp-policy">
   <type>Security</type>
   <policy_version>
-    <timestamp>2019-05-01T17:53:29Z</timestamp>
+    <timestamp>2019-05-01T18:01:39Z</timestamp>
     <device_name>f5vm010.westus2.cloudapp.azure.com</device_name>
     <policy_name>/Common/owasp-policy.app/owasp-policy</policy_name>
-    <last_change>Whitelist IP Address 10.0.1.212 [add]: Trusted by Policy Builder was set to false.
-Never learn requests was set to false.
-IP Address was set to 10.0.1.212.
-IP Mask was set to 255.255.255.255.
-Never log requests was set to false.
-Block requests was set to Never.
-Description was set to empty value.
-Ignore IP Reputation Enforcement was set to false.
-Ignore anomalies was set to false. { audit: policy = /Common/owasp-policy.app/owasp-policy, username = azureuser, client IP = 50.53.138.94 }</last_change>
+    <last_change>Whitelist IP Address 10.0.2.5 [update]: Never log requests was set to true. { audit: policy = /Common/owasp-policy.app/owasp-policy, username = azureuser, client IP = 50.53.138.94 }</last_change>
   </policy_version>
   <encoding>utf-8</encoding>
   <description>Rapid Deployment Policy</description>
@@ -24232,7 +24224,7 @@ Connection: close</response_header>
     <subnet_mask>255.255.255.255</subnet_mask>
     <policy_builder_trusted>false</policy_builder_trusted>
     <ignore_anomalies>false</ignore_anomalies>
-    <never_log>false</never_log>
+    <never_log>true</never_log>
     <block_ip>Never</block_ip>
     <never_learn>false</never_learn>
     <description></description>
@@ -24243,7 +24235,7 @@ Connection: close</response_header>
     <subnet_mask>255.255.255.255</subnet_mask>
     <policy_builder_trusted>false</policy_builder_trusted>
     <ignore_anomalies>false</ignore_anomalies>
-    <never_log>false</never_log>
+    <never_log>true</never_log>
     <block_ip>Never</block_ip>
     <never_learn>false</never_learn>
     <description></description>
@@ -24254,7 +24246,7 @@ Connection: close</response_header>
     <subnet_mask>255.255.255.255</subnet_mask>
     <policy_builder_trusted>false</policy_builder_trusted>
     <ignore_anomalies>false</ignore_anomalies>
-    <never_log>false</never_log>
+    <never_log>true</never_log>
     <block_ip>Never</block_ip>
     <never_learn>false</never_learn>
     <description></description>
