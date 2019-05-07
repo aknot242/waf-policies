@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<policy integrity_check="e699d628f8c51b586791dcff388810d8" bigip_version="14.1.0" name="/Imperative_BIZ/A1/OWASP_ASM_Policy">
+<policy integrity_check="69cedafd3b3869d62ed229534bb47f5f" bigip_version="14.1.0" name="/Imperative_BIZ/A1/OWASP_ASM_Policy">
   <type>Security</type>
   <policy_version>
     <timestamp>2019-05-02T21:38:30Z</timestamp>
@@ -37,7 +37,7 @@
     <csrf_url>
       <target_pattern>*</target_pattern>
       <wildcard_order>1</wildcard_order>
-      <last_updated>2019-05-01T18:04:18Z</last_updated>
+      <last_updated>2019-05-02T21:42:26Z</last_updated>
       <csrf_url_method>POST</csrf_url_method>
       <csrf_url_enforcement_action>verify-csrf-token</csrf_url_enforcement_action>
       <required_parameters>ignore</required_parameters>
@@ -1823,7 +1823,7 @@ Connection: close</response_header>
       <post_data_length>4096</post_data_length>
       <check_response>false</check_response>
       <in_staging>false</in_staging>
-      <last_updated>2019-05-01T18:04:18Z</last_updated>
+      <last_updated>2019-05-02T21:42:26Z</last_updated>
       <check_url_length>false</check_url_length>
       <check_request_length>false</check_request_length>
       <check_query_string_length>false</check_query_string_length>
@@ -1892,7 +1892,7 @@ Connection: close</response_header>
       <check_metachars>false</check_metachars>
       <check_methods>false</check_methods>
       <in_staging>false</in_staging>
-      <last_updated>2019-05-01T18:04:21Z</last_updated>
+      <last_updated>2019-05-02T21:42:30Z</last_updated>
       <clickjacking_protection>
         <enabled>false</enabled>
         <allow_rendering_in_frames>Never</allow_rendering_in_frames>
@@ -1913,16 +1913,11 @@ Connection: close</response_header>
       <in_classification>false</in_classification>
       <is_allowed>true</is_allowed>
       <content_profile>
-        <header_name>*</header_name>
-        <header_value>*</header_value>
-        <header_order>0</header_order>
-        <enforcement_type>apply_value_signatures</enforcement_type>
-      </content_profile>
-      <content_profile>
+        <profile_name>Default</profile_name>
         <header_name>Content-Type</header_name>
-        <header_value>*form*</header_value>
-        <header_order>1</header_order>
-        <enforcement_type>http</enforcement_type>
+        <header_value>*json*</header_value>
+        <header_order>2</header_order>
+        <enforcement_type>json</enforcement_type>
       </content_profile>
       <content_profile>
         <profile_name>Default</profile_name>
@@ -1932,11 +1927,16 @@ Connection: close</response_header>
         <enforcement_type>xml</enforcement_type>
       </content_profile>
       <content_profile>
-        <profile_name>Default</profile_name>
         <header_name>Content-Type</header_name>
-        <header_value>*json*</header_value>
-        <header_order>2</header_order>
-        <enforcement_type>json</enforcement_type>
+        <header_value>*form*</header_value>
+        <header_order>1</header_order>
+        <enforcement_type>http</enforcement_type>
+      </content_profile>
+      <content_profile>
+        <header_name>*</header_name>
+        <header_value>*</header_value>
+        <header_order>0</header_order>
+        <enforcement_type>apply_value_signatures</enforcement_type>
       </content_profile>
     </url>
     <url protocol="HTTP" type="wildcard" name="*">
@@ -1951,7 +1951,7 @@ Connection: close</response_header>
       <check_metachars>false</check_metachars>
       <check_methods>false</check_methods>
       <in_staging>false</in_staging>
-      <last_updated>2019-05-01T18:04:21Z</last_updated>
+      <last_updated>2019-05-02T21:42:30Z</last_updated>
       <clickjacking_protection>
         <enabled>false</enabled>
         <allow_rendering_in_frames>Never</allow_rendering_in_frames>
@@ -1972,16 +1972,11 @@ Connection: close</response_header>
       <in_classification>false</in_classification>
       <is_allowed>true</is_allowed>
       <content_profile>
-        <header_name>*</header_name>
-        <header_value>*</header_value>
-        <header_order>0</header_order>
-        <enforcement_type>apply_value_signatures</enforcement_type>
-      </content_profile>
-      <content_profile>
+        <profile_name>Default</profile_name>
         <header_name>Content-Type</header_name>
-        <header_value>*form*</header_value>
-        <header_order>1</header_order>
-        <enforcement_type>http</enforcement_type>
+        <header_value>*json*</header_value>
+        <header_order>2</header_order>
+        <enforcement_type>json</enforcement_type>
       </content_profile>
       <content_profile>
         <profile_name>Default</profile_name>
@@ -1991,11 +1986,16 @@ Connection: close</response_header>
         <enforcement_type>xml</enforcement_type>
       </content_profile>
       <content_profile>
-        <profile_name>Default</profile_name>
         <header_name>Content-Type</header_name>
-        <header_value>*json*</header_value>
-        <header_order>2</header_order>
-        <enforcement_type>json</enforcement_type>
+        <header_value>*form*</header_value>
+        <header_order>1</header_order>
+        <enforcement_type>http</enforcement_type>
+      </content_profile>
+      <content_profile>
+        <header_name>*</header_name>
+        <header_value>*</header_value>
+        <header_order>0</header_order>
+        <enforcement_type>apply_value_signatures</enforcement_type>
       </content_profile>
     </url>
     <character_set>
@@ -2265,7 +2265,7 @@ Connection: close</response_header>
       <user_config_level>advanced</user_config_level>
       <check_metachars>false</check_metachars>
       <in_staging>false</in_staging>
-      <last_updated>2019-05-01T18:04:21Z</last_updated>
+      <last_updated>2019-05-02T21:42:30Z</last_updated>
       <cors_enforcement_enable>false</cors_enforcement_enable>
       <allow_cors>false</allow_cors>
       <wildcard_includes_slash>true</wildcard_includes_slash>
@@ -2292,7 +2292,7 @@ Connection: close</response_header>
       <user_config_level>advanced</user_config_level>
       <check_metachars>false</check_metachars>
       <in_staging>false</in_staging>
-      <last_updated>2019-05-01T18:04:21Z</last_updated>
+      <last_updated>2019-05-02T21:42:30Z</last_updated>
       <cors_enforcement_enable>false</cors_enforcement_enable>
       <allow_cors>false</allow_cors>
       <wildcard_includes_slash>true</wildcard_includes_slash>
@@ -2325,7 +2325,7 @@ Connection: close</response_header>
       <match_regular_expression></match_regular_expression>
       <is_sensitive>false</is_sensitive>
       <in_staging>false</in_staging>
-      <last_updated>2019-05-01T18:04:18Z</last_updated>
+      <last_updated>2019-05-02T21:42:27Z</last_updated>
       <parameter_name_metachars>
         <check_metachars>false</check_metachars>
       </parameter_name_metachars>
@@ -2350,7 +2350,7 @@ Connection: close</response_header>
       <match_regular_expression></match_regular_expression>
       <is_sensitive>false</is_sensitive>
       <in_staging>false</in_staging>
-      <last_updated>2019-05-02T21:22:34Z</last_updated>
+      <last_updated>2019-05-02T21:42:27Z</last_updated>
       <parameter_name_metachars>
         <check_metachars>false</check_metachars>
       </parameter_name_metachars>
@@ -3193,7 +3193,7 @@ Connection: close</response_header>
     </signature_set>
     <enable_staging>true</enable_staging>
     <place_signatures_in_staging>true</place_signatures_in_staging>
-    <sigfile_timestamp>2019-05-01 12:59:52</sigfile_timestamp>
+    <sigfile_timestamp>2019-05-02 18:01:40</sigfile_timestamp>
     <min_accuracy_for_auto_added_signatures>Medium</min_accuracy_for_auto_added_signatures>
     <signature signature_id="200000001">
       <enabled>true</enabled>
@@ -3402,26 +3402,26 @@ Connection: close</response_header>
     <signature signature_id="200000082">
       <enabled>true</enabled>
       <in_staging>true</in_staging>
-      <previous_enforced_rule>QFQxRTw/bWBsRUNpWV91ZWlsQ2V4TV9EY1M/RkQxa1U6RTJfVGp2XWZAQVFES2ZeXUZCWUxLZFA9
-QU5pR19xYGZHQmQ1W1VPYGhDTlpdVmxOa0ZwVEtybWxBZkA7M2lUVFt1XGROPTI5Lm5SaD4+VGlT
-RGBXU1JaVz1bOl8rUTw1X0dMPVthZmQ5MEpJNVo+Sl04UjBWVDotOUd0PypLZFViWUBbT0FEOj8+
-Rm01YA==
-:WWVQZmhETjJhTjNHXkFOPjlIS0BLWV5xQjpCbGc0bFZGZkNAVGlPS2hWLGREWHhUXkwsTGNbUEdx
-R09YalxVQmJxPUNbP2w6YGs9RVsxVFFeaTpNW0hdM2RSa1U9MkgvM2cvRVJYYG1FSjFNcUBRSUBy
-Pl9KVS0vS0dWQ2I4WjdTZ2dPM186O2hCcVdRQ0ldbmRSZ2djXz0wVGZLQkVUSz9oTz1bU0o1Oz9x
-NWgxWQ==
-:PmJTSV8+TkRhM0hCbGdKQSpYL2hlVElLVkIsaF1RSTc+QDtsTWc5UEtSPVQxKDNDUGg9V0FYNDdP
-NEtZOEcwUFw8K184STVDT0wsXk1qR0o5UjpWTFdCSUI3UkpiN1csQFJrZk9fLkRiLk9STD1CYDpg
-QjxLWTdWSTJkRDU0V1xqVDtKLVxQaEE5My5jN2BAU1Y0QmlZb2AsLWg0WjJdXkJhUWBZZGYwYTdl
-PEg8SA==
-:P2QyTjo7Z1ZlOT9ON0RuUzp3UHU6QGxrU1NKa2BWc205WEhjWkhjbUh0TWxPZW1uUFVEcTsubmgx
-UjhXYkZ1YVBoVk1UOnVTUlZVaTxgb3RYWE9lZmZgb1RzTm9sQlxpZUpiST1PVW1rZi9lUzQvc2JD
-QV9pSkY/UGdIN0k0LmtMQU5VZF5fNzptRUs0MnFpP0g/UVFYOlUsbDRbZTlWO2ZLbjc+VGE3YmtP
-VVRBWQ==
-:LFpfUzVCP0Q3aGhZTWw8NUI+Xm5DZUQyR2ZeYV1LQjlsXGJeP0g/OlwtUGlqNTw/Vz9TXkZzZUFf
-Mis7WEpeVXVUTk8qWzY9UkFWT0JBb2VcXWFBYHU1U0o1UVsxPzxNRltcN0tnSFM/Olo/aE85LTpY
-TWc+aFdXaDk1SVdFSFlqT2hfLWZIVVkyUGVJUmM7Yk45TV9uR1k/OGszOU4wY0xeOEtOblpZND1U
-VW8+aQ==
+      <previous_enforced_rule>NGQ7OTREamZQZlNdUVRsVVdPV21sWFw4WXJBMjwwal1EdDhLTGlvY2phR2VMTmFqa2NIbVROZ245
+YEhZQ3BobFRkUlA9WF5fUlU9OmJcU2BkSlBYSEprT1BgaVxnQGs4WztUYGJXZTRhV1k4VjU4Rk0z
+Y1BEVXJYSmNiZjktR1o3N1pSO1hZVDpXPUQsOixqaTg7ZGFfQEgyWTRsZz1RZFguTmBQVmNiXmJl
+QlAuZg==
+:PSxnTUdUYi9TX15qQVNiQythZFlUYVpiTGdjP0I8Xl04PWJfQ3FXSlplTUdfYGRPUFdNbz5bYDBb
+XmQ9N2RRR1Q4Zlo6UV4rUkJmZDo5VkJoNllkQkhzRGBbSUI0Q1NMOEQ1TF9WSWhiWVVmP0FQWmI5
+VD5iVmxsU0pCPko0QUZYOD1WQV5tXD1SQTJjQGA2RjpKdFJUbl4qX0BwNSxzYDs3WzxcX1U6YlBh
+VDw+ZA==
+:Uks5VkxDSGtMZzJlZ1pCYGVCSTFmS0NUP1hKOW5SQ2BnUk8/SG41YVxIST80NzNWRzpTRihbMm5E
+ZEFMO0o2XUdeSTpLWjlaRE5KP15nL1VkSE5BV0o0XFlZRz9DN05dYlMyWU9bV0NGazxFNEJROzVD
+RUNFWGhrU2ZfU101blFOQTpVc1s9a2hoLFdOOEtfUjxrL1dMcFU2akNVSjQ0M2hAQnFXVl9JPWJu
+Xz8tSQ==
+:Q1BIRjQwQDREWTc8N0VTZU1BPl82QVNXXmc4cWBLTFdgajRvWEcyX1tCQ2xJXFRUV2NSaT0/SVJY
+ZERbUDtIcWFERFlSOUhnRWY7bzxvSGhJaj1nYltLWTtFcT9jPmxjQmhvN2Vaa0dGSlpXVz41bWJa
+bnVgVDRZS0RHTTc6amlxa2FZUFRRQ2hPVGdvNU1jP2RUQzZWSE8pVDNlWj1gVUZfYWlmVy8tPEde
+QVI7Ww==
+:YENAUlQtPTltVEc+YmU4UFYuPz1KaDhPX1JDSGRALFZCTD1RUkU9VVI7Mz5fOCxSRS0sWURlYkhF
+TE9YOUllbE1uXHZdaVtUX05CVFRFVjBeaGkyZ1tuVm5LTThkVTtOZWdaQC9kOy4ySHBkbEdKNDpo
+Q0ZEaHIyQUtDSjw6UWZXY05WUGRpPldJSEZTVEZqZWtRYmVsPjxiRlNqZkZnTHNcPjAycUlqPVVo
+VmtEOg==
 </previous_enforced_rule>
       <previous_enforced_rule_md5>458bf191a3d41e687e4741b334de628e</previous_enforced_rule_md5>
     </signature>
@@ -3592,19 +3592,19 @@ VW8+aQ==
     <signature signature_id="200000128">
       <enabled>true</enabled>
       <in_staging>true</in_staging>
-      <previous_enforced_rule>Xi9YXkJoW2s+QGpIcTxRVD9daixUNmVZSWtqRWBgZnZfY21IP21XVkVed0M0b1heTV5wRTw1W2BU
-RVRcUDxgW2pOdjpjNGlbZnJZQUhtVXd4Z1o6P01XOTRoUkdrL0gzSD1AcXVRK0diXVZRNz09ZzlJ
-WzdCWWZdVmdFSUYwUmNxV2RRT1xFc0ZgYjlaK2FHUUdtP2JVZmMzbEM5azJQZU1KUFtvTlE7Z2hE
-OTFERQ==
-:Xy1hXzNEUldVXlM8P1NcUExcXEJVUmZNSVxZQmtfZl4+XWE+YVFUZE0/ZkMqbmZjVV5hSlA/ZWM2
-YXFIc2FqWThuYjFaYGdaaF5tSFNhYWFFYmIzN0JsakA1c2JQNWs8bUtFTkZUbjJhO1RiZT02RGJa
-NGJRU0FUUTg5OkAzLTRMUGNQYFtgZDs+OEpHMTYuNWEyVDhfN0osN09SUUBZZGdcO0BLUzRqaTBo
-Vmo2ZA==
-:TC9eUlxnXT1Ma2U0ZkdRSFplYjddU043ckVRSGhaTzlHSGE5XVBNPTFTXzI8OlFSOTVeRkdmYzpY
-V1VDNmdYOkxOXy81RlY1XVhrLUhlVSxqTWlAZFtONU1CaFtkQVxJU2thQV9aYlViUUAvbEJtQ0Zg
-YFU2Uz9nU0lfWzw5VFFBbHVLQWBQS0E+VDVIOEU3Y2JcY1tcQ18zRjVvaDgsXVRwU1dmZ0xra0JQ
-R3Q9Rw==
-:NUBpUTVcTFJEbltVXl5VWGZdV2tLQ0ZvXDdyRztBL01CKmpZQGYxRUNSTVU9SGg=
+      <previous_enforced_rule>MkhnQD9kQnF3Q1VgZEJIUnBeWWxnNjZTTmRhU2daN2hEZGBWSHNIWlZPXFNHbUVkYE9XW0U5QmpL
+NmNORT41YUU/X1pWOEBhQVtyWSlvUmk9YHNiQk9GP21nVkdLLGAvZkFsX1RYWWtBY1BJOjthdUBP
+YzU3X0oxSVo7U2AsQl9POU5LaFZ1NWBgZmFZQVsxUkBnMVlbRjkoal9ZS0FoXWVOWGdMVT9XPG5a
+UzJCYQ==
+:Y0lWZWM/OUU+UmY4ZUQ1Tl1YY0BFYU1VZFhmVkFYTUJnXV5EMVQ1OlA3W0FaaUE/XlZSSmIySD9f
+WU5MQWRLSW1uXTdCW0xCPVZWTGFkQkFgWl1HbTtFQHMvazIyN0FQSmVZOEJfaj5HL0ZIZEMyZGBR
+aG4yV0FqVTsxTlU7X2BxWFVYaFdcQmE+XmpPNlRiN19KTFtbZ3AzK0dmNCxhXERUU2ZAVipEPThW
+QG0yYg==
+:QEhlRGlyQk1XYGRqXVRMYk9mU2VWRkthPzh4Uk1jTGFSQ2Zjak1SX3BcVGg1P0pUXjRTVD53PmJD
+VG5fRWZFZFE/ZGlCU0dnVFdec0FoTGA5QFxgZVJRa2ZPZEFgLmpdVWxjXUlTPjs4PWRPSTs9bWhg
+Ol04VldzVkplP0guVjU0cDFPZFZiX2VMQktuMFtHS25KU1VTUUMsSD1xYC9KTVR1T09OSjItO1RM
+SVQ4ZQ==
+:WUlETmpaSjlLNEo8NVpBU0FBSjZWNz5KUWc3VltFXjo2ai44TmpsYmVLNzpORj0=
 </previous_enforced_rule>
       <previous_enforced_rule_md5>ce92a7f0bba476a080f1090228b2674a</previous_enforced_rule_md5>
     </signature>
@@ -6359,42 +6359,42 @@ R3Q9Rw==
     <signature signature_id="200001682">
       <enabled>true</enabled>
       <in_staging>true</in_staging>
-      <previous_enforced_rule>ZTNfbm09NGdVM29GQHM4Vkxcaz5Ba0BaOExaNVg/LmFVZl41VHMxX2g0dDhXczBzdlxXSEJIMnJe
-WW5iaHAuZ0ZPaEtSdT1dTVFeM0FVTlpUOWVIc25IT2NdZWdPPypTNEFtO0BNRDlrcTFhbEFZY2JL
-ak1XW1EzTmpgSTg3UElVRmFTX1piZz5dSTNHMU9pUE88Y3ZQTXE3ZDxfWDBWPzFQQ2tCWlJjY2RH
-S2cyRQ==
-:WmE5RTtMRmhoPjpKbF9OYFRMVlA+TUNbUlhONkNYOFtNaVY5TEdAU0c6VTk5SUtZXjtIT2ltOXZm
-bkdCPD1LUW4zNUBnQUhVQ11PLS9XTWNlbEU6YVlCbGYsYFBaQ2ZgV1RNTElfZVY2NVE6UDQzMm1a
-REBIXlJkSS9qMDUpUGRBTTdYL1VlTFU3XUBvL01mSE1MXF1RUi5aO1hGYjxUMllhZURRXkdmNzxH
-Xkc/Nw==
+      <previous_enforced_rule>SUVdTEI/ZXNHWHM2Z3VbWERTdz5QcU9UaENgSTtFY2dFRVRRRW1sbUBVdEQ4bW1rRE1VMmFIb1pA
+PHZaR25rb3REbm81Z1JhWzpeTXBPU2JiVmE8RHRZVTNGQFtRLEo5Q21YcW5UbE1BQkZlVzZdW1Fy
+VV86U1U7W1VvO2w+VjNVXWxZTWFaL1pCOllFKS9bZ2g5RVhfZzUqSEFtVkFcZ0FkOkFvVWo7PUNA
+N1wxWQ==
+:LkxvYjJHZEdndlpPY2RwTUFgVltDTGNOZ0xSZzZbUkQ6O1JoTVBSQjZ0UWZATG1Qc3FQXHhscz9v
+Rk9xPUhtSGNpXXN0QnZENlFXbEBibzRaQE1lVlxrUUFoM1tKOmkrU09eW05UTFUobGhPMUdAZU5M
+aztBX2NnXmRhWWE/SUk5QFJfalViLUpiYl1aND4zZ0ZBPVlmST08cz1lRjVla2NCRnVYVTxTOWly
+az9CTg==
 </previous_enforced_rule>
       <previous_enforced_rule_md5>d5ba50e2ef54ebd5b37d9999cffbe5be</previous_enforced_rule_md5>
     </signature>
     <signature signature_id="200001683">
       <enabled>true</enabled>
       <in_staging>true</in_staging>
-      <previous_enforced_rule>RzRRVj5PZ0BkPzxhXytuNVo9LGVrQFw2WFkqOmU/bisvVzJzQGZhTltwTk5XL1dralgwY15hZkRB
-cDVnRjl0LStPSFNBbWM4RHFHaU1ebURKRTxWXDtyQ2tSTFk7MEJZYnFTMV1eZztjR1hnUDw1bWFs
-Ul8vXj5fUkZlL1o3XDlJXXVVTFIrNUVHQD9vOW9FQnRORV9ZYF84SjNFOTU8K2JaR2dmXUFTa0Ru
-X1UzXw==
-:VEU2RkNcYmZbSDVGNC9fc0RtUU1ETlZqOjZGTUVRUlxZWEtVUWZlV2phTE5hTlhcOVhWK1ZjcE80
-Rkg+PFVQZ01kRyhLRmJCRWxbUkpnd1A+T0dMOkdKbD1vZjpWY2BEYEdUWEw/QTZxXWtmZW1RSk9U
-VWxkU0heZWJgTDF2Uiw9RTI2cT9NQFNvRVpEalU8PEZLXjxAaGRFblhCT25OOmQ8VGpNQD1kb2ZN
-NmZuYQ==
+      <previous_enforced_rule>Sz03TzdYY0NFZUA+VDhsQktxUDpoQ1RJTUtOZXBCYkZoT0YsMVtJNUY0KklSMlFcO2BIOlVkbEFi
+NEE4Tz5oQmJhOEQqZGc9ZzUvMj5lZUFJVzZBb0heWD5aWWxFOj9gRT8ucEJUOEJJU0taTTU4Xl8u
+dT5LWDFKTVpiVmYxRWRwPThQWFlSNmNdPUItQUxaQEVPXGFfLU45VTQ8QjNFTkFAKDAxTz5wRFRl
+blI8Xg==
+:SFs1RWFYOnNLOTY9WDErZlRWSkxwUEBZZElJTltTSmtLaUxGX2A3VjRqRUdPUEhra2lTPkhlOFZe
+LUs1cE8+ZD9jRjtDRkc1dGFTXzxoYFU0N19FWUxnRzhNWmE7cltTRypKWUhMUnFWYDtHXHMyV2A3
+OXVBSmVLZGFcOUlhbU9rMmRDaVEuYXBcLS87dWZDMThrT1NRXz0+UERpMmUxR0pBYGNDS0ZVSldr
+ZWhiTg==
 </previous_enforced_rule>
       <previous_enforced_rule_md5>a296c38156768169591130c0de72cb05</previous_enforced_rule_md5>
     </signature>
     <signature signature_id="200001684">
       <enabled>true</enabled>
       <in_staging>true</in_staging>
-      <previous_enforced_rule>RCxeSmVZaC1rdFxbXE1qPVpWXGhcb2hsVGduX0VvZkNXPk9lXV1pOz84YV1HPlpKV1ldWFxkYG10
-QWFfW0BzUk9ZZGM7eG0vOzZJTTQyWjQ2WFRfSGFlP1NOMFtEPjIzVHBVXUtdRjleRmoxTTFLbUps
-Vl1dS0VXWUxPUV83QE01ZENZblBCW0pAWmlrMDFFamc+SzVdYWkzTk1BNzFUR1llS0E+WExDW0Uy
-W0c+ZQ==
-:TUtqPl1xLWY7PVlEUWgvcjVTYUZuUjZhaC5fP15zSWBYZVRDXWJDajVDVz9NVy5XTEBaOj1zPWpV
-Q15BSFQvW05ZVjJiZkVfMTllQFNvTmRhO0BSXEJVKkh0ZDhHaWdSVE87QE9JNkBBdE86Pmg6OkFY
-SGBEQGVCZ3AwOmRgM2YwSj1OdUhgUFdeOT5baUJaaFBsXlhDY2JPc2RCQ2hLSFpKc1ZVTk5mNnM/
-OjBjNg==
+      <previous_enforced_rule>OEpXRFhmQW1HZnNvUU5Fa0xSUV5NbEdARFNjZTRqPWdXOGhvaGA4X2c0bFdKN0laQ09kXm1zUSk0
+N3B3dD06Vk9PZ2cwZTxvdzBYV0E1L2hmSlllOXBAc2NIblVDQzxJWmE3ZWFLUG1FTT5ZdjtrV2pj
+ZHNeVk9PS1NFL1c8Mls0alFLQltoPV1NVF9UN1ttS2ZuTy9IOXM1RDc7OUBAM1VeXVFfUkZfRlBW
+O2cuPw==
+:MUhgbmBpUlB2P2FkTnRCVGhVSWxpVElDOS5hZ1t1OkpRXVxrWmQ2SmZFX3FcY0NBZ0JsdEx1QkpG
+RWhZQ1ZWRUlTXlJfcjg/Yk1tWFBrMkJFPldIUUg9dHZnU1A6aVN2XD1acEdFQjxBb1hCZmFcYm1B
+SVxtP1VKUmthTl9eS0Y1R1JEYko+UF5uMl5LbTowQlFjUktTWWRzcD1YMGBPZFlQRjhAPnBsP2hi
+TGJsXA==
 </previous_enforced_rule>
       <previous_enforced_rule_md5>31fa5add078a0027541dd688d255cb24</previous_enforced_rule_md5>
     </signature>
@@ -8169,26 +8169,26 @@ OjBjNg==
     <signature signature_id="200002175">
       <enabled>true</enabled>
       <in_staging>true</in_staging>
-      <previous_enforced_rule>S2FqTC5cR19OVl4oSUxBYEdNYkZkVilNL09ZKjVfSl1bZmdEWDc+WDRRWEBETEpVM1NbSExMTFtz
-UFs+SUI9VUpUXzU1SD9UTlpgLVldQl1bZmdEWDc+WDRhaXFePVA1RFBFYWdbN2dIbDxnTjZFS15F
-Wj9gVzhHTG9ZVzs2QklxTlNRTVpfa2JiUk9uQkVXQUo4bUZYMFs4aE89VzhSQ0BNR0F2SEc1RWle
-d08/Zw==
-:SC9MTEJpYTtkaD9Ha1tpOzRJLz1WWFpVZ1g0KzI9S0A/UjFnNVFbSm01OjJCPEw9W0A7ZzVRW0pt
-NUVXYzNZODhdRFBmZmE1WT9GVGpGYjdfQTBPZztnTGBEbnd3NmpPUmE+RzNYbj9JTVVbRUJlZ2dz
-Q0lEV2dzWEk2O1EzREVAblZZX1hIW11DR2FjMlktR2xLWWxdZTk5UE4/bz9ITWNwSFEuW1pjPVBB
-Yz1DRQ==
-:QVJ0RGNLOVozTlIuMUk3NDBQXEVGb0xNXm9VY2kxRE5fb1xzYzZETWBqTmdNZEpJX0JPYEBJOkpX
-Y2JvQl5BTGxkYm1fMUBIUGhdbXNRRjIzaVRqTUc6Ol5paVc3LkozNz1JPWRLXD1GbEc1Yi9TS0BU
-LlVYTz03UmJKaVE5TlFdTGVLOFdMMWNvS1dLNz1nZkdCYWxSQUsxbF5NPTlGRTlUYWNZWlBPRmNV
-Y100Rw==
-:RmZDVXVZXGxpXDhAUFpVaD9WNHNEY2ZjKzVRZj9cV2BbUDhkT0JaY0FkPGRmVWlvWGs4Z29KZWdU
-PjdfXEZfYV9hPVZGRlZlZ1FPZktJV2VmTj1aX2pdY1dCakpBOjlEUmAtVi9kblJrMzU6ZTtCaDtc
-NCxZX1FIVDloOFg+O0RoS19UV1w2WEk7ZzBCNGYqVVk2aD1ePXAyM2oqMz03ZENVdUw0W0xCajxT
-bmsySA==
-:LUhCVFBYNU5iXDJKP0FVaEY9Qk5HVEhjSmxQbUxEQ0JnWTZbMU5OVGRsNlhWYFNuNkU7VGhtQkxk
-RV5aQ0w7Ylh0QDxtbWlEXU03RnNJWlpDaDUsUGpOXEtISGRnQmdaZ3JCPkhiWUAxQF9CR0hkQmRk
-Q0I9YUQ6X1ZKYjtNWVJWdUpGZWAtblhKT0hlRkBGPWlPQFZlSkpJQ0JsX0NFWHRrTEhAaVkuMEVX
-VElJVA==
+      <previous_enforced_rule>Tzc7YFdTVm05Qkc0akVKWDxrSzxXPWBrTjdKNkZWU19cVDg+bzpJXj81SUw3P1dxSDFMVD8/WVlW
+NE40PDNQcT8ySDlGSWpgOUBHMWJWWV9cVDg+bzpJXj9FTUk+LFJDanZJY19NM0NaRDRHTzJFSV9r
+ZkU3TkptTkM/L1suMk1NaTNNQWRzO0pFSmtsNkdVQmh0dV1UZFEsQj1jRj1gKWJhUT9sUlszWkde
+U0kxQw==
+:PDpYPkZpUF1VS2tPZWlGXUVqZ1tWXktvVDFsZS5HPGg4Y3M9NV9MbmRSbGZIRkNpXGFnPTVfTG5k
+UmdZT0MwWksuXGBwaExdUkxeVmZIT2dgUnJbZUlKdFdlR1ExOVhXVU87bVNOMl1kZV4rPjRhcU1K
+XF1nWWdLTmdVWVE3Ql0yUC9LalQwX0BuQjViOjE1Zk4sXT5QNV07cG1FND4sR1c8b1FFVTJPZmIy
+Wz49Qw==
+:ZWVSbkRDWlBQZGxaXEtmXkM8VllpZ1NzbUlvS1BDZ25oSXJLOjZnXUtQYldEbFNjcGxrOmdHX15i
+TV5DU1RgXFdKVkEyQ2VgY05ZQUZjaVI8S3BSREdjYm9LPHdXMjBlNXM8N2ZSaEdYSUBbQDRbTWNp
+Oz1PTmlLUT5HRW48Zi1UaHRRRV9EUz1HXitXNG9lU2lVVS5TWVc0VEdlVDNcMTJsWGdkXXJjZlRA
+ST03Yw==
+:Wis+ZFJYLFkvPTt3dWFDW01DNzo5bD5gYWRQSUBlO1NJSzlNbj82Xlk9NTlpSkdURCw7OmBBTVpA
+WzouYUMrUi06QDk3PTROLUpURzJGO1o0SzZTXmUzUEVpTl9ROV5NZz5RaV9TQV9BbUltbDxHYztB
+VEtrVmpRT2VKc0A+PD9RTT9TQWZnTWRlV3FJN0tTYUVgN1FZMDkudmJXWzBiX2pNaWFnUlEzQ3Bf
+U2Q9SQ==
+:K0wuUkozXmJfWkZYSWxwYDU9SlhVOW9PL244X0ZlbEhWV0JhPz9nYFlqQmZkLWpaS0dPZnZgUWph
+bl9aMVQxcGBEUEZAdEZiP2VMZmlTXj5ySkdobWtfUkRtX25cRDNgRlM6UGBmMkheaW5qRk5CbFdT
+TzRSajs2X2dfcDVFOT5eQ2BeSG9eckBuPjxuVFhMb0lXQHZmSV49clEyT0U/bkNASlZWYVxYW25g
+QEtPPA==
 </previous_enforced_rule>
       <previous_enforced_rule_md5>ba982e28d1f3d6ec7bd7549ebc8e10ff</previous_enforced_rule_md5>
     </signature>
@@ -8515,35 +8515,35 @@ VElJVA==
     <signature signature_id="200002278">
       <enabled>true</enabled>
       <in_staging>true</in_staging>
-      <previous_enforced_rule>US89YVI1Vm5jUVE7b2tKVWJaVUVSZ2BBXj5JVjw2YWQ6Q0A7clhLZV1GT0M0Z1VwXkJSSzxnW2hM
-RUg/QV1QbmVBUjhDZ2ZncWBFWmphXVhRW0ouNjdRVWNZVU5bPklWNURcOEtPcVA8U1hANzViRE43
-Y2hXS2hYUlVtVEY7OTpSMWZUbGMvWmFQWk5PQXBucipXQjlYUkg4ZU1gWis1TDwzKkhKVEdEQ1py
-SjI0Rg==
-:Vkk9Xk1LMDg7WEovSVYwVGNQMkhsOjZZWjBGYTdvSHFmOlU4PTwwT1FcMj0pQSxZOkwsLjZNRTQ2
-ZS49SFlPSTdgRTNBTkllN0pKX0peMzkpSVQ0RT8yaWpgZGVYMi4xRT9nV1taX1tacEM9RDF1QThF
-ZjtWZ0pzV3JWPTc8VGdhRFtLOWBRUztyYT1tPj0zUkxqT3JSZkEvaGQ7YD9KSUxOO2tfVVkxYWs9
-U0wyZw==
-:N2RePm5saUNqZWlINExrQVhSYkRYaVlPWjVaSUFbakBfVWRJaWdsUEw7XDlVZWE0SkVeRWNqZDk6
-X2JCYzdhSj1baDZVN1k5X2VbRUl0XFVDaVtNW1RWZEFnTV9rNjJHYklGOT1STTdlc19BUDZtSVk8
-P0NrVFxXWXBSMUY/VDtPRV5JWF5LQUdfazkvQXE7QkA/NUdXOlEpdEBnZEFyQWpOOEtCVV1dW2pB
-UVEvWw==
-:RD5ISmQ4TUIrUEFLUTpNLypFKl1YN0lTKmU1M1k/cT86bD1oVmhwQUNVRVNoaG5fSUFLYGE4TUIr
-UEFLUTpNKzpoSClPLE1ZKktAOmdQZkFJXD5wRFVbdTxoTlVUNTQ9Uj41YXdcYEFiXGgrXzBhWUpG
-NFE5UmMtSW5TRy0+bGk3VEtLSltcYThqPnFLMTc/aFFgU2VUS10xZEdPXTBKMVlLQ0tyUXYrXW9Y
-ZWk/SQ==
-:TTVZUkRzZkBnV1o9Sm9XXG5yT0xLW1kxU1hbQkA3WDtZUmFXT0JbRlhZT0tJV1g9X2hcZz1ATkxE
-PWU5PElNRlp1XjU4Qk06MmlrL15AXUtPRV9LXnNjTmBvY0U9O1ZtOUVLb2ZcOkdeblFHQi9dSXBG
-Ml1lXENPVWNEY1EuUl9RRztXQ1xcRUVrMTdqNlc7SkdYSUtgR0s4YjxVPDZuZUFETUFlVV5BamNZ
-WURGZQ==
-:Yik6ZCtbQzpXUCo/RjxAPGJTMkFpaUU0Uk8vQVVJQUI3UkhUa1E7SlwwPjpNO0dgUG5LaE40Sk1V
-MEw/SThMN1xMQkljYkM3ak9CT2s+KzVJMT1KNFFDOldgXmdaOzhtaUc5UVdTP0k4dVVnZzhfVT1H
-TkN1XkBpVmBOYz87ZD9CR09ZR2dVY11sUWVMNmtlU1ZoOVFWYkU6bkxPVDI8X2pQR01jUGU9PW5j
-UV8rYw==
-:U01oV0c3V2FhblZNPDtnZVJJWkxkNWhhSllmNGtCZ2FdXlY4T2Ndb25wWjlXaF5lcVBfUEA+Y1pU
-cldNXDNjW0tOUzpCUV1oPFRjNVBUXmlMZXVIQ2NfYE1DXkBeMztYSV1VQGphRDA/QVpmQDc+WF9f
-WExTT2NUWTlPWEE7W1hyYlVQQGEyaGFEYEBiMlRKN0swbDtZY0QxRUNQXyhxQEJYX0pjXkhePTw0
-NkE0ZA==
-:MEY2QFo7WmRtYUpOPmdBQjZKTGBoSFhOQnJdRkFfbEJBS3VKO0NpclFtOkRbZ00=
+      <previous_enforced_rule>LzxTO2dYYVxBdWtRRFJvd0Q4a2c3TF85NlxnKmNjXl5oWVpZR0duX0dobWlXSmpeUHRsc2FKbFpe
+Z2hNUkBzXEdzbFZoWFlZNzprMEdGUlxJQWZcW2Zyb0FlQUpRNVFUZDUxYkViLEhYV15Oaj1kXFc2
+TkZcWV00U2Z1NjY5NVZPMllSbVlEZDxSMHBCN2ZOMDlQZjVJRU4zV2VaUj5Vamg2PTBDT05gYGI6
+Wmc2ZA==
+:XFtjZERHSFRiOWBJRD5IcDoxeDZZbEA7Q0tOZTxNOE87VVlAQmpIX15HZj04Z0A7Yy9kTjU7OVBP
+RmQ5RTk3ZU4/W01OOEFBTl9QUz9KR1tUZE5IPGlGPUVbQFloNlZDVUlqZ1xdOklmZT03WkNrNU1S
+MVdQXkdXWWUqYUgyRjk0UmRZR2M6Oz5oZTUyOTlpaVRvX29XYUs1YDRPbj06U1Q8YF1kXjxbaXRj
+X1FCOw==
+:RTJLSE9NMT9oQHQ2OXE7OVpnYTplUC1HZFBpOzpCOjhpMGkzSk4wQEpMWz1gSDFISFZdP1BTLEk4
+Kms6UlwxPjsuaURmXDU7SzZYLzpHUG9PSGxfYmtKYlFsR3E6LDhLNlE7NVpSQnFoZ0tdST5ZK2BH
+REVvUFt1WXY+P048TlFSRjNLOFlwL0BhcS1hNl05Rk1SXU1dWzk1dkZfNT10YTxOYWVZVVwzXWZR
+S0c5QQ==
+:OjRESVJZaTNpYUFmQ09pTmhgNmoyUmViaEI9RkNkX0pmPz9zRkNgSFtWQ15MQWhmUXQ9cVNRaTNp
+YUFmQ09pSlg7PkA9U2lkaGRAQzc1YEJZUTxpeDBjWnBXMWQ1Nz9CZzljaDlfcmA4TF9kQDhobDos
+YkxIXjNeUlBYYkg2a0BNPE1MVVBCQmRSb3JlNWI6UzhAPHJdLzAsT0pKKTBHXnM+S1Q1Ylw6RU9v
+Ujw1WA==
+:S2FyWmRMPzxaK2czSFAual1EXkhjQjRHampcUF5YMU1sZFpLX1c2QHUxXldlODFLbjpbaV9VMTpJ
+UVQ5aGYsNF1HUTteayxARUFYMUBhPkE6V1JFNEg+PG9laGNQP0xVREw9ZWtZO0dIXjRZQDhBa15B
+YjtcVTxnTGtRWz80RmlxSktVUVxbS2JmSkFgREF3QUZAaUJaLDs4bEdBWzZEY0BJPzNoSkNVRWVW
+aUFBYw==
+:SC80WFo/WVAtWzI9bWRWVkxePj9OT1VOLFo3PzpvUXBVWVIsPjVXbjA5RkRyW106am1FWGlWSmlB
+OUY7cFpMYzhbTDVKRlNRRFhOKz5UZ08zPElEWzVZUC1LSnFxNG4vU29GQy9aal9IPz1VP0RzR2Zt
+O01IWXVTWUU+N00xNmVBYl5VW15OO1xPP1NVMF1NRnAzU2ZjWVk4QmZFdTlUbWJiQFUyWV5DPEpJ
+XzlBSQ==
+:QVI8TlFSRlRqWlBkQlREWl85SFFcVENWV2k0b3VPOFJUakxfRS5EXGNMUF5NSUF0ZixJVTBTRk1N
+UklSSFRAUFY6TW1APj5XQTRRcFozQVZRYzFjTUQ+UUZhPU8vOEhTND9hMVhZZF1FcE9DcDlRK0NS
+ZktOWU1XVWpib1c7SnFaTi1VQlVQUWBxU1NHKTVHZUFqX2pgN2subjZPPzNAZTZESW9lTFpvSWtd
+cWsyOQ==
+:RmZrVGhLRmpcRzo4b2VcOl5pa0hKTkxeVEpVZmJhUWBIWkJMMU5HWEM7OkpLaDI=
 </previous_enforced_rule>
       <previous_enforced_rule_md5>50f58772918e74da6a3e5b0a6a7b5abb</previous_enforced_rule_md5>
     </signature>
@@ -9158,60 +9158,60 @@ NkE0ZA==
     <signature signature_id="200002436">
       <enabled>true</enabled>
       <in_staging>true</in_staging>
-      <previous_enforced_rule>UFk5UGFLP0Rea0BNSF1GUWptPjk8XDg8LC5HOmQyN0hNTE4+Sj1KOk01QUNHTTA8RFpGO2ZfOTk9
-S0FLcGU5OT1LNmNgUTNKSlNHOmBgOU4/Sk8pZSlSXUFgTUE6MXgzUUBlW3BaVFc+YTZNYjJRM2ZM
-OmNjXS03VGRvNVQ7WDsyQDlTUVlIW1pmTHNQQU9hSz5aTzpWOVcqalFLNDpIZ1dTWWNqZWRPSWZi
-a3AzXw==
-:KVBaOlpMR1leMWVVUk5PWFJNa3NsWzpvV01rc1xGSmFqY2NvaVk/Q1BocmhVcDtiblBXXFpDT2xE
-OF1YVEc3Z1xLU2NWSTdnXEtTX1VrO1peS21VdUlEVU5aRFc4O0BlOU1dcWVVZldBeEVpZkVJP0ZI
-OFVHVEdjUW1oN1A5SnFdSUtXRlxoWVhmR1lMOjFJZkxEPWhYaWcsZkxlNThUPUBGRz1jVlZtRWlN
-N2QyWQ==
-:Tjs8XnA/OzlrVk5lYGY2a2JcTDhKP0Z3Pjk7OVI4RndyLDFAaU1BN1RUMktTSj1tOEhAMFFYRThX
-ZC9xV0w+OTg5TCpjNzpoP1lKQ0FkO0t0SDE/Zi9KaDM4S2FrQ1RNRWliQ2BjU0tmQVZvPzNFYTZn
-RTM2WV45T0NdbVA2Vj1uaUpNQ2Jfc0c+OC9WR3dTX11bN1JZRF8sSE03czJEY0poQmFtUDNXYD5Y
-PTtAOQ==
-:T1M6UltOQWxONUc3ayxHcVxfOElWSz1oSUZKN1JhN29IXEI5T181XTNfQzdhMThcYTFDQ1JiR2g4
-SkFGay9FYihNUEBcOy9SSVBHS2AwL1cxVTY6WG03W2g9NUNINEZHbGpoYU1VMUdYRlVNRTpDRV1l
-R0dJVj5pUEFeLWk2OFFPXVJLL1xtP0hHa3FiLkFRQGJVZV1cWE0qTlxhVEVmLWBjMDlWSlU3WEk/
-VTs5QQ==
-:PGZZTT82YlE9QVI/cj5UQGdLbW9bcFVmYkRpakI5ZW85RHFqb1ZVWFZcZVZTW2FPT3JvV2VHYl9Y
-OGFbWmheSjdjY15iOFVpSVVnXy5lZ2w+NGFcbmlXVDZgc1ZiMFFiVzpcYFJXNWhmUEUyUT1kVEs/
-Q1JIUGIuUE4yXEA+QVg0PUxSPV01Wj5XZUI7MzJIaEFPWGVJPHA5X0ZKZTczMlU5SFZWTDU6aFFR
-alk0Rg==
-:ZWFsT0VJPi0zX0hCQj1FTl4yX0ZVNUouZFJSOEtbOzQ0NVtCU21GSXFfTEFObURMbl1VQGBCRj1w
-LlRtaGtAXTlNOWFcOz0vVzZBb2FsXzNlTkw/TDxCQU0qNmdLYjpdUWBlVzpOQ1k6OkVZMmltZU1U
-YDcuSThpbD1SV2RqVFE+YFdfakBTY1ktPVlZZ2VlZ1csOVZBajVQO0ZRR3EyT1RZU1FEU2tNPUNT
-VTx0ZQ==
+      <previous_enforced_rule>ZlFfb0ZlTUVUMV40YUlCRFw5YDhNPCxLSmxtR0NaN0c7WmhNZ2lGL2NhZ0xuMTpLMjhuTktRLTAz
+V2MyRU0tMDNXVExHOTNPPj9hRTVINU1DUG1MRlVEVjtcOEpbNE02SDxZXl5OXD5hW1dGSz1qZDo4
+XjRLWTlESGFENi46SUZiN01SPGRSVj5VNTBaOEQyUzlmamZYT14tWWA2VT9FaEotRUZWWzQuXlBl
+cEQyXA==
+:R0JPVE1yOEs1WFJdOWwoTkkwYE01PUFfTD5gTUVwR007SnJVNjtQS1NLWVpGRlROLz9iak9xQmRh
+U15uVXFSZ0leaGVVb1JnSV5oaVZJVlZHMl4rLGU5T0VhO1UvNjQ7YENLM2dcTVdhc0BjQjQtT2FS
+OmlBXEQ9UGZtLVI/YFtJVV1XVFYzU0VhSD1lQ0tlPkhENVdfSDs4ZllFMTsuTWQ6T2FmWTVxa3Bm
+U0EtSQ==
+:VDtUZHBsPUM/VnJjZEc4Y1RgdDJOcERhYj1XM1JtRGFGMF06aUBDTzZUXkVTaz9XTExiLlVNQ1A5
+ZFtnVz08UVo5XDhnVjxkdV1wPUVVOTFETF01Zl5MZFlcUVdXNEA7YEphU2hbQC9eWkgrXTVtRUY+
+UlVAXTVjUF5zazMzbFk5QEFNS2I+YUpsPlNPNjlvaUc0c2VXX0UpZDVfTzVOYVhVQW10XlBdXGtK
+R2kuOQ==
+:XTdRajcuZz5VPkBLP1BlQVlyPz1KYWs+VE81RURBZUFNZUlJYzdXRyhuKkNRSVJKaj40O0pCYTot
+US46Q1NrQDNeLzhUUV1AQl8uN1BUXT06XD9SVEVRRV1qcz81PFBdNkVnSV5hVDlhXj9xSy5NK2FG
+QElxUTVDWHVyP08valFUQWdTP182M0JjXTNmOUlvTEdmdVZnSy0rdG5xNz1AV0BKPTldWGJjXF1F
+Y05BPQ==
+:MjosPEJUNk5VQzVCVVQqQzs1RFJuTDVrOjpSVzdLT3B1Nk5XSGo/V1hkSFtoMzdQQ1pMbmhXNlxA
+SjxmXUZIU2NbSlNXUkdmUWlGVDs/MWFeRjpjSUM9SWZAX0llLURHZHFJXVxbWVE/S0tFbDhfV0Bt
+Xj1nXnZBTUo4VzpFamtPYVVXPllFSV5ETWdXOEtBUGBAOUlSQDcoSFhNV0BQVWFeWWNSVmNfPlQ9
+W3Q9OQ==
+:Y1NWVXJbN0VHSzZEbUk+UHBSS0o2Tz8+UDY2NjY1NDxMVTVKRDktUVk/MEM5OS0+TEM1OitoPTM6
+RlZjYGU9QVZRUkNLQmlpU0BTMUtmWFVtYTc7LFVKVWU/bFk8XVFbN01CLVxHRTdqN0tlZmdObU5X
+RTlTVERlOy1CS1hqUzVZSGBtQj1dW1YxP1lCa0BFcFxFdzlCPkdoMFhBNGJnTz5IPmlpRjlpbDo3
+X3BsZA==
 </previous_enforced_rule>
       <previous_enforced_rule_md5>4183d50a677e6a23821aa724fe1c5f8b</previous_enforced_rule_md5>
     </signature>
     <signature signature_id="200002437">
       <enabled>true</enabled>
       <in_staging>true</in_staging>
-      <previous_enforced_rule>Uz1HU1tLYmJkZT05SD1qZ3E+PVc7RVBmZ0NNRF4/Z25ZdThFbCtVYj1SRlJYLE1iTXM4SjNHUGg8
-PUUxRENXL0lbMS1AQ1cvOVYvL0BCUFBIQlFjQ1xRUixZQjxiOz9eSzM0OFpZUjJBZTtqLD86Vl07
-OUxrV2tOV2MuVEUzW15wNDRIMFlAal9kQUROOmJIOStRXkVhaz4vXWJQZzB1RkA8PkJTZkhgP2BV
-PjE8YA==
-:MDZgMS9RZzY/SExERWVnNzlsbWhIPWdhT25tU05ecjViWW5kTmNoN3NKTl9dZGc8UmxyaDxtZzIv
-anBjPFBmVjNZaWhNaF1UMVlpaE1oaDxBbW9XUEBbXz86WjplN2U0WWM4VCxQV1RBQltYQDA4PGxf
-ZVg9VTg8Uj9cOE03cU46X1hKTVk7cGUrW2RUL1JSTF9jTFpYKkwtO0JUbzhjYlZmQnA6T11CPz1T
-akJHQA==
-:SSlLUW02K1xYN1Q8ZFBSQmY7Oz5oMjdqaTdSUlxKV2BhW006U149QFhUUDNkSUpybjovWWlPSXFv
-SFJSVlI7Xl0/OTlVaS9vWGROdGxQWHNubVgtYV4zW2tXLlI8MFE6QjRoZmdYZUpAV1ZwVjpkXFA5
-RWRDV2A4WlhfRGk6WzRUNlxMRGVlLFtZSlIyLTZcZkFJTGNjYDIrTTFkQT1PaEA9SjZoWWM4PFhQ
-QlstXg==
-:LmBdOUBWUFNcaWxaUGc2R20uUmY2XEtGbjBYZTA0NDBaPFJVKVg0P2ArUERDQThWRGBmXEhQNztR
-SWpaQGE3NzlFZ0xebUdCSFlpZlI6SUNbZ2NrZlpKN1gxS2Y/Ok1IR1JdRC9ISl5lRkNwazZYPj5S
-RDpnZE9kTjA2cmI9X2htWlNISU9CNENDcS5DLEZKUmQqPkNMYzwwOUIuNjldNkRlaWA7WzpKYkEt
-OGI3ZA==
-:L1RaMlYxcEAxc1BdQGVtTFV3V11URXE6anJeUDBvczZJVGhmWj1pamVea0ZnTGgrPlJoYV5IZldX
-cGJbSF5vST13ZFEwUGNBSFFlVmFta0JQclxfYTZwQDFTMlNWN14vZGQ6ZVRkPTdYSFlLQztxL1dv
-VUFDW2ZbU0duK2c7LkFPX05NNFtFQzxFN2dVNV8xMHBbcWxLTGUzTGpbTzxGRWhlNjtaUU1PYFNF
-Tzg4aQ==
-:XFNDPDplMVNDLTc0ZF8wV0tdRUxtZDVLOmA7TE1DL2c5UjdLVSwycTYyRDA4XjVOQVg6N1BhLVFM
-MD5GNj8vVms6PkNQQDJVW2lIOEUxKUhIV0tbcW5SXGVxLzQuPztecz1gTldiR15ccFhgb0JKPGZK
-RV5LbEZWRmZjRFZMM3BNTC5CQXRLWj1rVEBGQFxUSEFDQmdnXGZdaD10PlRnam8+Xk5mZU9oVGdU
-Tm5XNg==
+      <previous_enforced_rule>QUJXUGsvQ0FaTzduRF03OFlKM1gvZVFJcztHW2ZlNj1RTTJaaE9MS00sLlVCUERLXUs2XzltUUs4
+RztkRGFOWFldL2BAYU5YSWI7XkBkUTNERkE2QTJQMzQ/Q1lRNz49NWVkP25SYlNETmpBZjZVXUJk
+S004Vk1FVEBva2tARjtbZkhXTE5OR2FRblE9LjtZZGlnZ1pbOzkvSkNLUzA6LzduRG9tU2BFSE1w
+c2UtQQ==
+:RlZhTUV0ckZLQVMsL0ZmQ1Fnblg+WmZZO3Nua0BDaUVeVGdYREJhR1dNW09nO2Y6LGdnWFJKbEhR
+Y2tXLmNlZk9mcFQ3TVRkTWZwVDdNZUBBaGpnPmFQUzdfSEBPMztOUDZTXF1ddDhpW1tERzJKUjk2
+UjZLVks+Ul9GQjo3Pz5qOUFYQ1U+bkddSThiPVpEUy1QdHFnNVY0TUQ2V0RBTkFBU0BQUkRIaGBx
+aj8rOg==
+:Z2NIaClWRTlGXT1NRDhCSzBrQE1CVk1LN2lHN0xmP0FJNURDRzZFVU5OS0YyaTpPRmY6cD0zO0Qx
+WEc5UjBHN0NpMFRVQUNISjxLVzxuOk5GN01KNTg/PD1dQ2FONXA7bU8sOV1ZP3NnbzNpNys5O2BC
+P11IU2xDS2pIO3BCTndTR0hLN2M3Z0NhZUVdQjlnNEI5P3FiRkc5ZlxDPz4+YWQ8cm9jSmtfY2Jb
+XT44Rw==
+:NEg1OE1hV0IqQERTN0o3WDllNmNNLVJjSmM0ZltZN2UqT0BUWi01YE5gOD1iYjlLdklEV2U1PFo9
+Xk5TbzI8ZlVYT1lJTkxhdE5DZTNPTFApOFFgKTtLdkRCTVduOWpHXWo4X11OZEdjSjU3YSw7NU9m
+P1NDTHFLSFZGc1I0PGk1dD5RNlFmZzhGYUM3MytZa2tfZ2BmQzswTFBvdjRUU1ZdKmNPT3BVYEdJ
+PVc3aQ==
+:PUAxRkJYUFw5Pj1zajxFWEVMQHNeXFNiXk9VYmpEQ149b09UQFZJQl0vSlJLYVBnQl9NZzxvTldL
+SVNnbDNVVS1OSWdqaTNhUGBSbD9CR15EQTtxR09QXDk+PENBQEpbOWlRQVBRUjtjSmFxVkZbKWNm
+cEVlVW0/Uks2Q1svPFVZbzlJMFlkLzxBRS9sQ11lR20+a0VTbzErUDR1Ri9wTzpwbzVRWFBtY0dl
+Y1c5Xw==
+:Uk8pPVdFVVZWR0tNRUlWUlZXPTNIRlViX1hPN2xlTWByblM4NmBMYmlKUlFhSFFbYG5STDlHVVxV
+SE43X2VJVy5QQjgxakxYPmE4R2BXT19Pbz9iYWxmYWU9M11PSWZBO1JTOVVyV1M7OGJdOkVDPUpR
+al1GazxjPTNrV3FBQk1gWS9lKXFLV1c5ZjVcS0FLb1pwK1tjRi1iPFVtTj5oTzdLXUdUYUdXLzs8
+aTlQVQ==
 </previous_enforced_rule>
       <previous_enforced_rule_md5>33ae2a056acb79afb12f938c0061a92e</previous_enforced_rule_md5>
     </signature>
@@ -9354,46 +9354,46 @@ Tm5XNg==
     <signature signature_id="200002476">
       <enabled>true</enabled>
       <in_staging>true</in_staging>
-      <previous_enforced_rule>RjA6TWxiSl5WN1h1UUBOWVlgVF1AOkhkX2g2UlEsR2JhOVdhZUBBYilSSV5DPzliWTFHZEQySGQ2
-XFJdUEZGWDZtUjlgOkVeUE0xTjI8QjBEbT5bP1RGYklNckhpNEE6UDROWm1mSkppX1ZCNz1maD1C
-WTg/WWVMVFlrNDw2M0pqMzxWT1o0YklTZDhSNEg2Uz1XZFNOQ2I0WWk6aTtBWkM1dE5uW2gsWFRU
-dDcoWA==
-:ZzVFaEQya2JBSD9CY15vZz5XPkVLY2JMV1dCMEZbUERPZ0IxR0tQTjtcQUFGZFdEY2guX2Zfa15L
-WEtVXUZRY0pbMyo+Q1FTMFQ+UksyT2I5TjxIQk1qNlxJaWNGQkJjanNrM19WNUFmUWBfRTQtbWNy
-bGk6XlBXSEQ1NWA/bjFCZ1VTR2AtNUI7UDdnPTc5N2xuNU9hYl86QElPQz0+K2NkV3FtWUFLYEpO
-XVRBaQ==
-:NDJkPWVfPE80Zlg7PUAwZFQqWixeVTxPNGZYMmk3OTs6QGNfUWw1cm9DWUVBYDRYYipcPi41OztO
-Q2JwXW1JOD5iZUJDOSxRcmhcRml0Pzc8U11ZY0Q+S3M8RVZbPVNgW1FRVmBYRWBhMVwwZjJEWE9V
-Rlw4Tkg+WjVPaDU4ZUY3Y2dSRVk9Uko/OlJSPSw8a1A2ZEtUYmA0PSliVzxVLlhWVWRcUU8uXDRQ
-Rmw1Pg==
-:PWI4TD9QTGtdX0t3Ojs+QDY1QVI1TVJMQkVBUzY9Ul5gQUx1bVBMWVY2RVU2UUtZRlVFa2BtQVVY
-O0hYPDdBc1tsM3ZlRj92dC8zcFddPHBlO09QZl4zaVdAUEFPRVZnNmFaSWZkUE9gSipjNjlbPWBc
-PT9PWFVJUT1LT3cyOmFaa0JRRlpUQTtVWjNeNGFZRG9VZS9WRTsqSktvTjBOOTleQDVhXWpjZkU4
-Y0c8Rw==
-:UklfbmQyR1tOOVg3NHBLa0EwWSo5TylEWzZZZ2c5SGR0aFhLYkZEYT1hcEFFL2w=
+      <previous_enforced_rule>TD9qTlxEU2U1Y1g6SVxLYjo8WDgqVmFdQjJsVWFeWmlSYV9GbWpqaVpQYT9HaWJpSnFdSTZmYV1L
+PlpIQnJXXVc5WmRSVmJVY1FnUzxmWz1pOW5OV0BfWWpvVlVWQlg7UkVdQWddXkNjaUwrYEFtVUdK
+bE02WDc1UmNTYzw2WGNAQllXVWdWWUBicDtGMztpYkZYY2NbR00ybjlvYDcsL1VQZ110YFw5alw0
+RWpCOw==
+:NVA8QDxPTXA6QUpybzNHUTVET1s9PFQuVlpDWixKPCpSakNbLTo8XCxdTFEyPUEqZmk/NVhIPXBC
+SzBJcWczTT9aOmg8ZkNzQ0NLWi9TO0wuTz1iODBCTFdqX01mLjY/NDtAP1ZKQG1obWpjXTpHW2VH
+R184Wi1ZSWBfb00sZjtaRjZPblNgX0NnUDEzMlVVR0dPWVlVK1syYmNfZz9GNzxKZEtPUS5RXmRu
+Y1A/ZQ==
+:KkRcOXY/b29qUFY5VFxlTFZYSjxvN29valBWRHBVbk9oeFFXYkhoUjV1X1E6OG04SFxaSj9TYk9c
+c1hoXk1oXGhEb1BKV2tpMEpyTm5IdFtqQ1dVblR1aTs6SkJZMkVYZFc5UFlkRDpLODE+YDtWNj9a
+anRrSV1qVCg+RDQ9bUpOTlNKK1liYmlCNVJPOFpUVFg0PEpOSVA1L2BaYz9BZmNYO1RNV2xKSi1V
+VmowXg==
+:OzozPWYuSGZlSFBsaWc6UUQ+MllmXUpVSC4yWGVNSmFmNk1uNC5QWGpLSkplPUVYOmpQalFPPV5s
+SEdlT0szWmdPPG1KZDtdUERCbUY/Ol1dSFRNNS45aGtVXURdMnVmQjNSSFpaVE47YUdkOEMyOmNA
+PzppXGU+V1ZuTDsxWz5yM1hYQV0+WF9XM2pVQXRAPkFhTFNhTUg5VzRCaj0/Pkk6UjZZTTxoRVJh
+VDY0OA==
+:OEo9RGVRMUt1SkBpK0U9RXIzOW5GXlVQLjVHQ2heSE5FX05ba106S14+WFdlOTQ=
 </previous_enforced_rule>
       <previous_enforced_rule_md5>86111cdf0039318643b3a5b165c8c74b</previous_enforced_rule_md5>
     </signature>
     <signature signature_id="200002477">
       <enabled>true</enabled>
       <in_staging>true</in_staging>
-      <previous_enforced_rule>X08+XzJQVzY3QDxHYUBRQTpZPC1kPmk8XEBBR3FoakNaY0FPV1NbSUZiS0JEVVxRTmJOSFA7XzVP
-O0ZJSkFdMV5cQmNWRm5IaW41PnA2XWpvXD4xU3BfRGJAPGxKNkVmbVVqQEhbRGxhOVtkOTwwaGJi
-MWA9UltKUSouMmg0N3BMVkxOLmRGLjswM0hTLEBiM10xUGRYLU4sO2hcTTNPMGVkakBZUjZGazJH
-UDQ1Og==
-:TClgVG1vTjBMMFpGOElSUVc7VT1qREV0RmVlSF08M3BCVWVHXEwzPlhiWDlnQzJwTlRjX0VERjZq
-XGxnPF0uVWlfYkhfXDIxWzxdNmhlNFZaNGc2YVJNVC9HSk82P2ZRUXFDR0VaWl1iRz45VDhVSURw
-YE1QVTVvUUU/Y2IvaDkzZlNTaWBYQ0NSWD1yMjkvZXZAVy9Ua1kzTjdlPD44ZVRmVV9MXVRzaUhu
-QUw7Xw==
-:NTIzPENpQlg4ZFdGZ0wwPVAuRy0+X0JYOGRXO1NBO3Q+SkZmN1g3OXFJTERfcD5RXipJP04/LXRK
-TUN1Q1NTXzZsNk9xPzRadmYzP0NcRV40XT5eSUxEZHVmL09WMCpDNUlRO0BMZllZaT1bZS5xWWhF
-VGVQYDtdSlwuXy0wWj9bQkdLWFVmW0RlXy0/NmNRSDteX29ZOV8zZjRhWUNsPT9QM0M3VTRNX2o/
-bWhBQQ==
-:Kj5wKkZHaj9jV1lhT2ZmaEhFWXJQVGRePjVZcU9kZCxgRVpbUk1oQWpGU19NTm9BOmdZXXcyZUVo
-U1RaNWpfQ2VaZVJiWWNETFFnZnBEYkZbU0tkXUFhUWlQOD06QmYzaXg1SzpSc1M6Q1tFSzVbXz5l
-UGdAZ15TVz9kTWE3PnFPZSlPVlVlO2hFa1NyMF0tV2lcMWNcaGs2PEpLNjtwQWRbdVMyZ01xR0o/
-WVEuOw==
-:OyxJQ1JKZVBhUDR2bEpvNGgzM2tTOV9bODtDRD9BdDtBZzpYODh4Pkg2WEhHM0k=
+      <previous_enforced_rule>LVhQPVlGT1Q1aWZPLnJLczw+ZmFBaDFaWlNzTzxGMklURnNPYEFBY0QrYVphR0JrTCtoSFlpP11b
+VGJbcXNHY2AtdENfeDRkaUlddkteP0pvO2hnPEZLcnQ5Z0RQRldWOFRWamRPLzxeQUxGNSpUMGZV
+LWBPV0w8VS5nYGU3O1BYWj5SRVNTMDs+NDJZQ15MSmJRRixhQC4uMWlSTTNnbkBPQDZeVGFWajZU
+VDI5aA==
+:QlBhU2JHSFVORmdZTWtGclNBYGphZFFNaldkUVBSPU9sZ2RSUWI9Y1JOZVpSY0RPWGhWSjpeOl9G
+UHU+UUM2bj9bXV1aOkBMO0hkaU1HPG9QTlppVmxHQXFdUGpIPm1KYz5eVEVWRGQ6WmBgK0FicD0u
+UTw6YztcVE9HXGM6TTpLNEhOZ1xQTl1ZWmRWO2JQUz9VOFxPYUg7VWtQQC1vXGI9KkhKVWg4PGFA
+VDE6Yg==
+:MyhRP0U9QjtTUT05ZVxGXGVHPTRASUI7U1E9MklnPVFTNzxRLTpLXFwuOENVSEZ2aUM7QlBlQVE/
+MkFgMTk/SElTSERxZUI3W0s9QDs4R0tJZkBlSWJEOVQtTzJgP2lWRU06MkxZQDxGO0tyPzlsTldV
+QU5lV1lGTjlGSkItZ1xwTjpUN1NuZlk0UUxeOkJOPk9RYD5XaUAwNzJCYTRfTElSPkRNZlhiPz5b
+RkE8Yg==
+:UEVMX1JqTzY/bjk4RzFrXXI4Q0dOMUtRZkhDSE9BSz1ISjwyWGpdRkQ1LURFW1BGVFYxQm9RakhC
+QC47NUNqNj1tTTd2NG43NDw/O2ZhaztHPDVJVWBmNkNbXjxhPWsuUjU2UjNeUVJBWGlSMz5QNmU1
+bVZCUS46U008LjlHX0YxMWZSXGVFZl1JW2ZPPVpUTCspUGdiLEotWUJWay5HYlQySm5BWW9KRldV
+Wis/Xg==
+:KUxiSTpwdWxrSWFYTDhlWHI0YFtlY11DNkZWRj9naGM/aGNoSl5kXlZjbF5bQjk=
 </previous_enforced_rule>
       <previous_enforced_rule_md5>2188d761569eab7ebeab36dea5397ba4</previous_enforced_rule_md5>
     </signature>
@@ -20861,6 +20861,14 @@ WVEuOw==
       <enabled>true</enabled>
       <in_staging>false</in_staging>
     </signature>
+    <signature signature_id="200020001">
+      <enabled>true</enabled>
+      <in_staging>true</in_staging>
+    </signature>
+    <signature signature_id="200020002">
+      <enabled>true</enabled>
+      <in_staging>true</in_staging>
+    </signature>
     <signature signature_id="200021002">
       <enabled>true</enabled>
       <in_staging>true</in_staging>
@@ -21956,18 +21964,18 @@ WVEuOw==
     <signature signature_id="200100324">
       <enabled>true</enabled>
       <in_staging>true</in_staging>
-      <previous_enforced_rule>ZDdSa21NVjpcQWZNSGNMR1FmYjE3W2JJVWNlMltnZjIzXFtHSnNNRVhKS0FlZGFDalhPREtfX1pT
-XU4qUDZTPz9Ddl5BaV1scmxsNFlPTmRqPFYqMGJbSjk1Q1Y4NC1SVFM7Vj9fX1pgPUwqQjNmTktR
-RlZVYVJuUSsrSlRBXS42VU1UZmRfKjk/OmJjPixkak5cSC5fPk44M0tOQDNPZllaMUxHSldsZT4w
-aE8uPg==
-:LTpbL15oPlBIaWVWXmNSMjRRY20waVVhQkJbVGc1SkRRY1tqSTZFY1I1aWQ4W1VaRmtmWFF4QmBY
-R2tPT0A6VFtSXF9KT0JXdElYW0ZmQVtlS3JVNUU3Sj81Oz5aO01iOWBjYCpSL0BfPVtMbTFkRmlX
-PF47WGJKVC44aj04O2xZZE9YWVRxRj5ASTZPOFAwS1pgVGpUQkovO0BIVThFWD9XUzoyWT04aTZr
-VmQ8PA==
-:Qko9YlFcOmhBYD5VOT9UVVFaOl0xR0NLT2hLZWc1OF1YODVrU1Q2XUxrNmpHQ0hsVV8vbF9eOmJV
-TjtqYDM8a0huOV0raENhLWBmYUNDVmtwS2hhWF1tVz1lLGk6NktfOE9fNzlWMm1VaFNXZC92TUpJ
-XFd2U1VfWnYwV00+PV9SRmEzW1JONzZcN1lNMEpLYVBAUVdYQ0c7YFJdPD05UTpMM2c5V1JhWF9R
-SWMyag==
+      <previous_enforced_rule>WjVSaXZhaTpROSxFTzNlSUhwOjU+LVdDRG0rPmJBTTxkVi0/UUNgQVlMRSlcNFQ9K1w5UlI3WGRC
+X0BAWVBsM2hNOl5ISVhsN3Y4OGBZZWItRkJAOURWSnBhRmo4Q0ViZCk7ajxNMkZAVkFmQzhqTDwy
+Ok5KVEU2TFYwZEs2PWZQPmVSXGBIYmVcP3RoNWRaUDpYMGZTMVAtWVpQMC5dNmlAY1o8UF5aQlFH
+VD81Wg==
+:K05MN2JEY1g7UURcYD93RkdFNmtKRXBXQ2pQTk1JazQsSzhwM1pmZVlnKlREN3BqO0tDWjs+YWhr
+b0BPY1JXUGY0U182Y2NPT2dVY0YsZktcdzNfU09QTDQzPmRUPF9kRFlbbmlWUDBBQ0peSDlOUFRK
+PDhPWkNiVEBvTjczWVhxV1dQQV1YPGMtVEZrP15UM09aXChbN0w5PVE4Vjs9WEpSW0BrVWBoSTJY
+ck8wRA==
+:KFhPampWRHBuO25hVG1CYT5Dallcd1FbQD9ba1BfUGk1X2lXXEJEZzdCalBgcTZkQkZfWDpQSlww
+N2tSS2FQY2VJbVNUVENbWGNWazIsPltZUU1Lb1xCP0dlRFluQDdrbDtGTV5ZR2FNZUcvTTN2NTxG
+aUlGVmhPXm9IVUIsVUNPTDRROUk5QTdoLTszO2RLW0RHXXNTRm1EYExjaD1dW21IMFVYTEFPSmZT
+S1ksUg==
 </previous_enforced_rule>
       <previous_enforced_rule_md5>5c5f183974094e2db2008a267824f4c0</previous_enforced_rule_md5>
     </signature>
@@ -24599,7 +24607,7 @@ SWMyag==
     <identify_device>false</identify_device>
     <maximum_prevention_time>3600</maximum_prevention_time>
     <flg_enabled>false</flg_enabled>
-    <last_updated>1556733858</last_updated>
+    <last_updated>1556833346</last_updated>
     <detection_threshold_credentials_stuffing_matches_reached>100</detection_threshold_credentials_stuffing_matches_reached>
     <detection_threshold_action>alarm-and-captcha</detection_threshold_action>
     <login_attempts_from_the_same_user_threshold>3</login_attempts_from_the_same_user_threshold>
@@ -24632,14 +24640,14 @@ cwoSd3d3LmltcGVyYXRpdmUuYml6CQAAAGhvc3RfbmFtZQ8AAAB2YWxpZF9ob3N0X25hbWU=
 </element>
       <matched_wildcard_element></matched_wildcard_element>
       <description>Add Valid Host Name</description>
-      <occurrence_count>48</occurrence_count>
+      <occurrence_count>7</occurrence_count>
       <trusted_sources_count>0</trusted_sources_count>
       <untrusted_sources_count>1</untrusted_sources_count>
       <user_comment></user_comment>
       <is_read>true</is_read>
-      <first_occurrence_time>1556734025</first_occurrence_time>
-      <last_occurrence_time>1556831296</last_occurrence_time>
-      <average_violation_rating>0.4</average_violation_rating>
+      <first_occurrence_time>1556914215</first_occurrence_time>
+      <last_occurrence_time>1557242227</last_occurrence_time>
+      <average_violation_rating>1.1</average_violation_rating>
       <is_automatically_learnable>true</is_automatically_learnable>
       <suggestion_reason>policy_refining</suggestion_reason>
       <element_type>VALID_HOST_NAME</element_type>
@@ -24665,14 +24673,14 @@ OTgGAAAAc2lnX2lkFgAAAHBhcmFtX25lZ3NpZ19vdmVycmlkZXMJAAAAcGFyYW1ldGVy
 </element>
       <matched_wildcard_element></matched_wildcard_element>
       <description>Add XSS script tag (Parameter) (disabled on the parameter) to Overridden Attack Signatures.</description>
-      <occurrence_count>10</occurrence_count>
+      <occurrence_count>2</occurrence_count>
       <trusted_sources_count>0</trusted_sources_count>
       <untrusted_sources_count>1</untrusted_sources_count>
       <user_comment></user_comment>
       <is_read>true</is_read>
-      <first_occurrence_time>1556829585</first_occurrence_time>
-      <last_occurrence_time>1556831552</last_occurrence_time>
-      <average_violation_rating>4</average_violation_rating>
+      <first_occurrence_time>1556914258</first_occurrence_time>
+      <last_occurrence_time>1557242429</last_occurrence_time>
+      <average_violation_rating>5</average_violation_rating>
       <is_automatically_learnable>true</is_automatically_learnable>
       <suggestion_reason>violation_mitigation</suggestion_reason>
       <element_type>PARAMETER</element_type>
